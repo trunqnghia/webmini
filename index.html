@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini-project 1: Trang HTML chuẩn đầu tiên</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>KIẾN TRÚC TÀI LIỆU HTML5 CHUẨN</h1>
+    <p>Dự án Mini-project 1 - Nền tảng lập trình Front-End</p>
+  </header>
+
+  <nav>
+    <a href="#khai-niem">Khái Niệm Cơ Bản</a>
+    <a href="#giai-thich">Giải Thích Thành Phần</a>
+    <a href="#thiet-ke-ui">Sơ Đồ Phân Vùng UI</a>
+  </nav>
+
+
+  <div class="main-container">
+    
+    <main class="content-area">
+      
+      <section id="khai-niem">
+        <h2>1. Cấu trúc một tài liệu HTML chuẩn là gì?</h2>
+        <p>Một tài liệu HTML (HyperText Markup Language) chuẩn đóng vai trò như bộ khung xương của mọi trang web. Để trình duyệt có thể hiểu và hiển thị chính xác, mã nguồn cần tuân thủ nghiêm ngặt các quy chuẩn thẻ lồng nhau theo chuẩn W3C.</p>
+      </section>
+
+      <section id="giai-thich">
+        <h2>2. Chi tiết các thành phần cốt lõi</h2>
+        
+        <article class="card">
+          <h3>&lt;!DOCTYPE html&gt;</h3>
+          <p>Đây không phải là một thẻ HTML, mà là một <strong>lời khai báo</strong> cho trình duyệt biết trang web đang sử dụng phiên bản HTML5 mới nhất. Nó giúp trình duyệt hiển thị trang web ở chế độ tiêu chuẩn (Standard Mode) thay vì chế độ tương thích cũ (Quirks Mode).</p>
+        </article>
+
+        <article class="card">
+          <h3>&lt;html&gt;</h3>
+          <p>Là phần tử gốc (Root Element) bao bọc toàn bộ nội dung của trang web. Thuộc tính <code>lang="vi"</code> bên trong thẻ dùng để khai báo ngôn ngữ chính của trang là tiếng Việt, rất quan trọng cho SEO và các trình đọc màn hình.</p>
+        </article>
+
+        <article class="card">
+          <h3>&lt;head&gt;</h3>
+          <p>Khu vực chứa thông tin cấu hình mã nguồn (Metadata). Các thông tin này không hiển thị trực tiếp trên giao diện trang web nhưng vô cùng quan trọng, bao gồm: bảng mã ký tự <code>charset="UTF-8"</code>, cấu hình hiển thị di động <code>viewport</code>, tiêu đề trang <code>&lt;title&gt;</code>, và đường dẫn liên kết CSS.</p>
+        </article>
+
+        <article class="card">
+          <h3>&lt;body&gt;</h3>
+          <p>Khu vực chứa <strong>toàn bộ nội dung hiển thị thực tế</strong> của trang web mà người dùng có thể nhìn thấy và tương tác được (văn bản, hình ảnh, bảng dữ liệu, video, liên kết...).</p>
+        </article>
+      </section>
+    </main>
+
+    <aside class="sidebar-area" id="thiet-ke-ui">
+      <h3>Sơ Đồ Phân Vùng UI</h3>
+      <p>Giao diện trang web này được phân vùng chính xác dựa trên bản vẽ thiết kế kỹ thuật dưới đây:</p>
+      
+      <div class="ui-mockup">
+        <img src="assets/ui-design.png" alt="Ảnh chụp bản thiết kế UI dự án" onerror="this.src='https://placehold.co/600x400?text=Anh+Thiet+Ke+UI+Mockup'">
+        <p class="caption">Hình 1.1: Ảnh chụp phân vùng Layout (Header, Nav, Main, Aside, Footer)</p>
+      </div>
+
+      <div class="project-info">
+        <h4>Thông tin dự án:</h4>
+        <ul>
+          <li><strong>Trạng thái:</strong> Hoàn thành</li>
+          <li><strong>Môi trường:</strong> GitHub Pages</li>
+          <li><strong>Tiêu chuẩn:</strong> HTML5 / CSS3 Semantic</li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+  <footer>
+    <p>&copy; 2026 Dự án Mini-project 1. Xây dựng và tổ chức bởi Nguyễn Trung Nghĩa.</p>
+    <p>Phát triển dựa trên tư duy chia khối layout ngữ nghĩa (Semantic Web Layout).</p>
+  </footer>
+
+
+  <script src="js/script.js"></script>
+
+</body>
+</html>
