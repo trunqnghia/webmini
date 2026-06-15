@@ -1,79 +1,241 @@
-<!DOCTYPE html>
-<html lang="vi">
+<!DOCTYPE html><html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mini-project 1: Trang HTML chuẩn đầu tiên</title>
-  <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">  <title>Mini Project 1 - HTML5 Structure</title>  <style>
 
-  <header>
-    <h1>KIẾN TRÚC TÀI LIỆU HTML5 CHUẨN</h1>
-    <p>Dự án Mini-project 1 - Nền tảng lập trình Front-End</p>
-  </header>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
 
-  <nav>
-    <a href="#khai-niem">Khái Niệm Cơ Bản</a>
-    <a href="#giai-thich">Giải Thích Thành Phần</a>
-    <a href="#thiet-ke-ui">Sơ Đồ Phân Vùng UI</a>
-  </nav>
+    body{
+      font-family:Arial, sans-serif;
+      background:#0f172a;
+      color:white;
+      line-height:1.7;
+    }
 
+    header{
+      height:100vh;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+      background:linear-gradient(135deg,#0f172a,#1e293b);
+    }
 
-  <div class="main-container">
-    
-    <main class="content-area">
-      
-      <section id="khai-niem">
-        <h2>1. Cấu trúc một tài liệu HTML chuẩn là gì?</h2>
-        <p>Một tài liệu HTML (HyperText Markup Language) chuẩn đóng vai trò như bộ khung xương của mọi trang web. Để trình duyệt có thể hiểu và hiển thị chính xác, mã nguồn cần tuân thủ nghiêm ngặt các quy chuẩn thẻ lồng nhau theo chuẩn W3C.</p>
-      </section>
+    header h1{
+      font-size:60px;
+      margin-bottom:20px;
+      color:#38bdf8;
+    }
 
-      <section id="giai-thich">
-        <h2>2. Chi tiết các thành phần cốt lõi</h2>
-        
-        <article class="card">
-          <h3>&lt;!DOCTYPE html&gt;</h3>
-          <p>Đây không phải là một thẻ HTML, mà là một <strong>lời khai báo</strong> cho trình duyệt biết trang web đang sử dụng phiên bản HTML5 mới nhất. Nó giúp trình duyệt hiển thị trang web ở chế độ tiêu chuẩn (Standard Mode) thay vì chế độ tương thích cũ (Quirks Mode).</p>
-        </article>
+    header p{
+      max-width:700px;
+      font-size:20px;
+      color:#cbd5e1;
+    }
 
-        <article class="card">
-          <h3>&lt;html&gt;</h3>
-          <p>Là phần tử gốc (Root Element) bao bọc toàn bộ nội dung của trang web. Thuộc tính <code>lang="vi"</code> bên trong thẻ dùng để khai báo ngôn ngữ chính của trang là tiếng Việt, rất quan trọng cho SEO và các trình đọc màn hình.</p>
-        </article>
+    .btn{
+      margin-top:30px;
+      display:inline-block;
+      padding:14px 28px;
+      background:#38bdf8;
+      color:#0f172a;
+      text-decoration:none;
+      border-radius:12px;
+      font-weight:bold;
+      transition:0.3s;
+    }
 
-        <article class="card">
-          <h3>&lt;head&gt;</h3>
-          <p>Khu vực chứa thông tin cấu hình mã nguồn (Metadata). Các thông tin này không hiển thị trực tiếp trên giao diện trang web nhưng vô cùng quan trọng, bao gồm: bảng mã ký tự <code>charset="UTF-8"</code>, cấu hình hiển thị di động <code>viewport</code>, tiêu đề trang <code>&lt;title&gt;</code>, và đường dẫn liên kết CSS.</p>
-        </article>
+    .btn:hover{
+      transform:translateY(-3px);
+    }
 
-        <article class="card">
-          <h3>&lt;body&gt;</h3>
-          <p>Khu vực chứa <strong>toàn bộ nội dung hiển thị thực tế</strong> của trang web mà người dùng có thể nhìn thấy và tương tác được (văn bản, hình ảnh, bảng dữ liệu, video, liên kết...).</p>
-        </article>
-      </section>
-    </main>
+    section{
+      padding:80px 10%;
+    }
 
-    <aside class="sidebar">
-  <div class="card widget">
-    <h3>ảnh chụp thiết kế UI/page và thư mục assets</h3>
-    <img src="assets/ui-design.png" alt="Sơ đồ layout" style="width:100%; border-radius:4px; margin-top:10px;">
+    .title{
+      font-size:40px;
+      margin-bottom:20px;
+      color:#38bdf8;
+    }
+
+    .card-container{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+      gap:20px;
+      margin-top:40px;
+    }
+
+    .card{
+      background:#1e293b;
+      padding:25px;
+      border-radius:18px;
+      border:1px solid #334155;
+      transition:0.3s;
+    }
+
+    .card:hover{
+      transform:translateY(-5px);
+    }
+
+    .card h3{
+      margin-bottom:15px;
+      color:#7dd3fc;
+    }
+
+    .folder{
+      background:#111827;
+      padding:25px;
+      border-radius:16px;
+      margin-top:30px;
+      overflow:auto;
+      font-family:monospace;
+      color:#e5e7eb;
+    }
+
+    .image-box{
+      margin-top:30px;
+      background:#1e293b;
+      border-radius:16px;
+      padding:20px;
+      text-align:center;
+      border:1px solid #334155;
+    }
+
+    .image-box img{
+      width:100%;
+      max-width:900px;
+      border-radius:12px;
+      margin-top:15px;
+    }
+
+    footer{
+      text-align:center;
+      padding:30px;
+      background:#020617;
+      color:#94a3b8;
+    }
+
+    code{
+      color:#7dd3fc;
+    }
+
+  </style></head><body>  <!-- HERO -->  <header><h1>Mini Project HTML5</h1>
+
+<p>
+  Project mô tả cấu trúc tài liệu HTML5 bằng giao diện trực quan,
+  semantic HTML và DOM Tree hiện đại.
+</p>
+
+<a href="#about" class="btn">Khám phá Project</a>
+
+  </header>  <!-- GIỚI THIỆU -->  <section id="about"><h2 class="title">Giới thiệu</h2>
+
+<p>
+  Đây là mini-project môn HTML/CSS nhằm giúp sinh viên hiểu rõ:
+</p>
+
+<div class="card-container">
+
+  <div class="card">
+    <h3>DOCTYPE</h3>
+    <p>Khai báo chuẩn HTML5 cho trình duyệt.</p>
   </div>
-  
-  <div class="card widget">
-    <h3>mô tả phân vùng HTML theo ảnh thiết kế</h3>
-    <p>Giao diện trang web này được phân vùng chính xác dựa trên bản vẽ thiết kế kỹ thuật bao gồm các thẻ chuẩn Semantic: header, nav, main, aside, và footer.</p>
+
+  <div class="card">
+    <h3>DOM Tree</h3>
+    <p>Minh họa cấu trúc lồng nhau của HTML.</p>
   </div>
-</aside>
-
+<div class="card">
+    <h3>Semantic HTML</h3>
+    <p>Sử dụng header, main, section, footer...</p>
   </div>
-  <footer>
-    <p>&copy; 2026 Dự án Mini-project 1. Xây dựng và tổ chức bởi Nguyễn Trung Nghĩa.</p>
-    <p>Phát triển dựa trên tư duy chia khối layout ngữ nghĩa (Semantic Web Layout).</p>
-  </footer>
 
+  <div class="card">
+    <h3>Responsive</h3>
+    <p>Tương thích trên desktop và mobile.</p>
+  </div>
 
-  <script src="js/script.js"></script>
+</div>
 
-</body>
+  </section>  <!-- CẤU TRÚC THƯ MỤC -->  <section><h2 class="title">Cấu trúc thư mục</h2>
+
+<div class="folder">
+
+mini-project/
+<br><br>
+├── index.html
+<br>
+├── README.md
+<br><br>
+├── css/
+<br>
+│   └── style.css
+<br><br>
+├── js/
+<br>
+│   └── script.js
+<br><br>
+├── assets/
+<br>
+│   ├── screenshot-home.png
+<br>
+│   ├── ui-design.png
+<br>
+│   └── dom-tree.png
+
+</div>
+
+  </section>  <!-- PHÂN VÙNG HTML -->  <section><h2 class="title">Phân vùng HTML</h2>
+
+<div class="card-container">
+
+  <div class="card">
+    <h3>Header</h3>
+    <p>Chứa tiêu đề project và điều hướng.</p>
+  </div>
+
+  <div class="card">
+    <h3>Main</h3>
+    <p>Chứa nội dung chính và các section.</p>
+  </div>
+
+  <div class="card">
+    <h3>Footer</h3>
+    <p>Thông tin sinh viên và bản quyền.</p>
+  </div>
+
+</div>
+
+  </section>  <!-- ẢNH GIAO DIỆN -->  <section><h2 class="title">Ảnh giao diện</h2>
+
+<div class="image-box">
+
+  <p>Ảnh giao diện đặt trong thư mục <code>assets</code>.</p>
+
+  <img src="assets/screenshot-home.png" alt="Screenshot">
+
+</div>
+
+  </section>  <!-- GITHUB PAGES -->  <section><h2 class="title">GitHub Pages</h2>
+
+<p>
+  Sau khi deploy GitHub Pages, project sẽ chạy tại:
+</p>
+
+<div class="folder">
+
+https://trunqnghia.github.io/webmini/
+
+</div>
+
+  </section>  <footer>© 2026 Nguyễn Trung Nghĩa — CĐ-CNTT19A23
+
+  </footer></body>
 </html>
